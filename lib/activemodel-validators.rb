@@ -1,5 +1,6 @@
 require "active_model"
 require "activemodel-validators/version"
+require "activemodel-validators/rails"
 
 module ActiveModel
   module Validations
