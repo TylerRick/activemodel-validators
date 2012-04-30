@@ -64,8 +64,6 @@ Add to your Gemfile :
 gem 'activemodel-validators'
 ```
 
-You don't need to require any files (other than 'activemodel-validators', which bundler will do for you). ActiveModel should be able to find and load the validator classes using `autoload`
-
 
 Comparison to other validation gems/collections
 ===============================================
