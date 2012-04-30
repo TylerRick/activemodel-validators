@@ -4,8 +4,8 @@ require "activemodel-validators/rails"
 
 module ActiveModel
   module Validations
-    autoload :GreaterThanValidator       , 'activemodel-validators/greater_than_validator'
     autoload :LessOrGreaterThanValidator , 'activemodel-validators/less_or_greater_than_validator'
+    autoload :GreaterThanValidator       , 'activemodel-validators/greater_than_validator'
     autoload :LessThanValidator          , 'activemodel-validators/less_than_validator'
 
     autoload :BooleanPresenceValidator   , 'activemodel-validators/boolean_presence_validator'
