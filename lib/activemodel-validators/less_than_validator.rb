@@ -1,3 +1,5 @@
+require 'activemodel-validators/less_or_greater_than_validator'
+
 module ActiveModel
   module Validations
     class LessThanValidator < LessOrGreaterThanValidator
