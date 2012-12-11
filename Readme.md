@@ -12,6 +12,9 @@ class Thing < ActiveRecord::Base
   validates :birthdate, less_than:    { value: Time.zone.now.years_ago(1).to_date+1, message: 'must be at least 1 year ago' }
   validates :end_date,  greater_than: {attr: :begin_date, operator_text: 'later than'}
 
+  # shortcut for        greater_than: { value: 1, operator: :>=, operator_text: 'at least' }
+  validates :how_many_pies, at_least: { value: 1 }
+
   # Because presence: true doesn't work for boolean attributes!
   validates :is_18_or_older, boolean_presence: true
 
@@ -40,6 +43,7 @@ Documentation
 * [GreaterThanValidator](activemodel-validators/blob/master/lib/activemodel-validators/greater_than_validator.rb)
 * [LessOrGreaterThanValidator](activemodel-validators/blob/master/lib/activemodel-validators/less_or_greater_than_validator.rb)
 * [LessThanValidator](activemodel-validators/blob/master/lib/activemodel-validators/less_than_validator.rb)
+* [AtLeastValidator](activemodel-validators/blob/master/lib/activemodel-validators/at_least_validator.rb)
 
 * [BooleanPresenceValidator](activemodel-validators/blob/master/lib/activemodel-validators/boolean_presence_validator.rb)
 * [RestrictToValidator](activemodel-validators/blob/master/lib/activemodel-validators/restrict_to_validator.rb)
