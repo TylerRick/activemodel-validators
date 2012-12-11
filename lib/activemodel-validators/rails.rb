@@ -1,4 +1,4 @@
 module ActiveModelValidators
-  class Engine < ::Rails::Engine
+  class Railtie < ::Rails::Engine
   end
 end if defined?(Rails)
