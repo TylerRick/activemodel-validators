@@ -1,8 +1,7 @@
 require 'spec_helper'
 
 describe 'test that config/locales/en.yml is being loaded' do
-  it { I18n.t(:'activerecord.errors.messages.must_be_blank').should == 'must be blank' }
-  it { I18n.t( :'activemodel.errors.messages.must_be_blank').should == 'must be blank' }
+  it { I18n.t(:'errors.messages.must_be_blank').should == 'must be blank' }
 end
 
 describe Response do
