@@ -1,0 +1,16 @@
+en:
+  activerecord: &activerecord
+    errors:
+      messages:
+        restrict_to: "is not one of the allowed options (%{allowed_options})"
+
+        less_or_greater_than:      "must be %{operator_text} %{other_value}"
+        less_or_greater_than_attr: "must be %{operator_text} %{attr_name} (%{other_value})"
+
+        sum_of:              "must be the sum of %{attr_names} (%{sum}) but was %{value}"
+        sum_of_with_addends: "must be the sum of %{attr_names} (%{addends} = %{sum}) but was %{value}"
+
+        must_be_blank: "must be blank"
+
+  activemodel:
+    <<: *activerecord
