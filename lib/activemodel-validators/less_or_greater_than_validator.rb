@@ -39,7 +39,7 @@ module ActiveModel
       # Otherwise, options[:value] may be any comparable value (number, date).
       def other_value
         if comparing_to_attr?
-          @record[options[:attr]]
+          @record.send options[:attr]
         else
           options[:value]
         end
