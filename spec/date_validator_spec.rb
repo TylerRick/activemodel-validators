@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ::User, 'ActiveModel::Validations::DateValidator' do
 
   shared_examples_for 'should not allow invalid dates' do |attr_name: nil|
-    message = "is not a valid date (must be in mm/dd/yyyy format)"
+    message = "is not a valid date (must be in dd/mm/yyyy format)"
     it { should_not allow_value('non-date').  for(attr_name).with_message(message) }
     it { should     allow_value('2013-01-01').for(attr_name) }
     it { should     allow_value('30/12/2013').for(attr_name) }
