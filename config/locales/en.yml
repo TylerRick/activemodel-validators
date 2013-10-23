@@ -10,3 +10,5 @@ en:
       sum_of_with_addends: "must be the sum of %{attr_names} (%{addends} = %{sum}) but was %{value}"
 
       must_be_blank: "must be blank"
+
+      at_least_one_field_must_be_present: "at least 1 of these fields must be present: %{attr_names_list}"

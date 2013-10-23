@@ -20,6 +20,7 @@ class Thing < ActiveRecord::Base
 
   validates :model,  restrict_to: {allowed_options: ['Model A', 'Model B']}, allow_blank: true
 
+  validates_with AtLeastOnePresentValidator, at_least_one_of: [:home_phone, :work_phone]
   validates_with AtLeastOnePresentValidator, at_least_one_of: [:parent_1_home_phone, :parent_1_work_phone, :parent_1_mobile_phone], message: :at_least_one_phone_parent_1
 
   validates :option_b, blank: {message: :must_be_blank_if_option_a}, if: :option_a?
