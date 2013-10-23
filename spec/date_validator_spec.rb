@@ -2,8 +2,10 @@ require 'spec_helper'
 
 describe ::User, 'ActiveModel::Validations::DateValidator' do
 
-  shared_examples_for 'should not allow invalid dates' do |attr_name: nil|
-    message = "is not a valid date (must be in dd/mm/yyyy format)"
+  shared_examples_for 'should not allow invalid dates' do |
+    attr_name: nil,
+    message: "is not a valid date (must be in yyyy-mm-dd format)"
+  |
     it { should_not allow_value('non-date').  for(attr_name).with_message(message) }
     it { should     allow_value('2013-01-01').for(attr_name) }
     it { should     allow_value('30/12/2013').for(attr_name) }
@@ -13,6 +15,13 @@ describe ::User, 'ActiveModel::Validations::DateValidator' do
     it { should     allow_value(nil).for(:optional_date) }
     it { should     allow_value(''). for(:optional_date) }
     it_behaves_like 'should not allow invalid dates', attr_name: :optional_date
+  end
+
+  describe "date: {expected_format: 'dd/mm/yyyy'}" do
+    it { should     allow_value(nil).for(:custom_format_date) }
+    it { should     allow_value(''). for(:custom_format_date) }
+    it_behaves_like 'should not allow invalid dates', attr_name: :custom_format_date,
+      message: "is not a valid date (must be in dd/mm/yyyy format)"
   end
 
   describe 'date: {required: true}' do

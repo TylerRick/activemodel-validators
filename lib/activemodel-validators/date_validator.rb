@@ -23,8 +23,9 @@ module ActiveModel
       # Note that the format given here only affects the error message that you show your users. It
       # is up to you to actually change your model to understand or convert from values supplied by
       # users in a particular format.
+      # Some formats that ActiveRecord already understands include 'yyyy-mm-dd' and 'dd/mm/yyyy'.
       def expected_format
-        'dd/mm/yyyy'
+        options[:expected_format] || 'yyyy-mm-dd'
       end
     end
   end
