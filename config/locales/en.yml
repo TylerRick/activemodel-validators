@@ -13,4 +13,6 @@ en:
 
       at_least_one_field_must_be_present: "at least 1 of these fields must be present: %{attr_names_list}"
 
+      year_invalid:                 "is not a valid year (must be a number between %{min} and %{max})"
+      date_invalid:                 "is not a valid date (must be in mm/dd/yyyy format)"
       must_have_at_least_10_digits: "must have at least 10 digits"
