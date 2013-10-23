@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency "activemodel"
+  s.add_development_dependency "activerecord"
+  s.add_development_dependency "sqlite3"
 
   # For config/locales
   #s.add_runtime_dependency "railties"
