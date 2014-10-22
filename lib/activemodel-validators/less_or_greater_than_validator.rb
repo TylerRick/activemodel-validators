@@ -53,9 +53,19 @@ module ActiveModel
         !!options[:attr]
       end
 
+      def human_attr_name
+        return unless options[:attr]
+        if defined?(ActiveRecord::Base)
+          ActiveRecord::Base.human_attribute_name(options[:attr])
+        else
+          options[:attr]
+        end
+      end
+
       def message_key
         comparing_to_attr? ? :less_or_greater_than_attr : :less_or_greater_than
       end
+
     public
 
       def validate_each(record, attribute, value)
@@ -67,7 +77,7 @@ module ActiveModel
                               value:         value,
                               operator:      operator,
                               operator_text: operator_text,
-                              attr_name:     options[:attr],
+                              attr_name:     human_attr_name,
                               other_value:   other_value,
                             )
           )

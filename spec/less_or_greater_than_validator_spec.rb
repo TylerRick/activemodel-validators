@@ -12,5 +12,5 @@ describe Response do
   it { should     allow_value(1).for(:how_many_pies) }
 
   it { subject.how_many_people = 5
-       should_not allow_value(0).for(:how_many_gifts).  with_message('must be equal to how_many_people (5)') }
+       should_not allow_value(0).for(:how_many_gifts).  with_message('must be equal to How many people (5)') }
 end
