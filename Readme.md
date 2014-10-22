@@ -10,10 +10,13 @@ Example Usage
 class Thing < ActiveRecord::Base
   validates :birthdate, greater_than: { value: Date.new(1900), message: 'must be later than 1900' }
   validates :birthdate, less_than:    { value: Time.zone.now.years_ago(1).to_date+1, message: 'must be at least 1 year ago' }
-  validates :end_date,  greater_than: {attr: :begin_date, operator_text: 'later than'}
+  validates :end_date,  greater_than: { attr: :begin_date, operator_text: 'later than' }
 
-  # shortcut for        greater_than: { value: 1, operator: :>=, operator_text: 'at least' }
+  # shortcut for        greater_than: { value: 1, operator: :>= }
   validates :how_many_pies, at_least: { value: 1 }
+
+  # shortcut for less_or_greater_than: { attr: :how_many_people, operator: :== }
+  validates :how_many_gifts, equal_to: { attr: :how_many_people }
 
   # Because presence: true doesn't work for boolean attributes!
   validates :is_18_or_older, boolean_presence: true
