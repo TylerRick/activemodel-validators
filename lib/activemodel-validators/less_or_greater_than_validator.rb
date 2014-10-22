@@ -17,6 +17,10 @@ module ActiveModel
         raise NotImplementedError, 'must be defined in subclass'
       end
 
+      def allowed_operators
+        [:<, :<=, :>, :>=, :==]
+      end
+
       def operator
         options[:operator] || default_operator
       end
@@ -24,7 +28,7 @@ module ActiveModel
       # Defaults to the standard mathematical name for these operators, but you're free to override with
       # something that makes more sense ('later than' might make more sense for dates, for example)
       def operator_text
-        options[:operator_text] || 
+        options[:operator_text] ||
         {
           :<  => 'less than',
           :<= => 'less than or equal to',
