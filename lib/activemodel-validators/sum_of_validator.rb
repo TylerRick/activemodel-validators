@@ -9,8 +9,8 @@ module ActiveModel
 
       def validate_each(record, attribute, value)
         addends = options[:attr_names].map {|_| record[_] }
-        return if value.blank? || addends.any?(&:blank?)
-        sum = addends.sum
+        return if value.blank?
+        sum = addends.reject(&:blank?).sum
         unless value == sum
           record.errors.add(attribute, options[:message] || :sum_of,
                             options.merge(
