@@ -1,7 +1,7 @@
 ActiveModel Validators
 =======================
 
-A collection of Rails 3 ActiveModel Validators
+A collection of Rails ActiveModel Validators
 
 Example Usage
 -------------
@@ -35,7 +35,6 @@ class Thing < ActiveRecord::Base
   validates :end_date, date: {required: true}
   validates :graduation_year,       year: true
 
-  validates :phone,                 phone: true
   validates :address_postal_code,   postal_code: true
   validates :address_state,         address_state: true
 end
@@ -59,7 +58,6 @@ Documentation
 * [DateValidator](activemodel-validators/blob/master/lib/activemodel-validators/date_validator.rb)
 * [YearValidator](activemodel-validators/blob/master/lib/activemodel-validators/year_validator.rb)
 
-* [PhoneValidator](activemodel-validators/blob/master/lib/activemodel-validators/phone_validator.rb)
 * [PostalCodeValidator](activemodel-validators/blob/master/lib/activemodel-validators/postal_code_validator.rb)
 * [AddressStateValidator](activemodel-validators/blob/master/lib/activemodel-validators/address_state_validator.rb)
 
@@ -117,6 +115,8 @@ Other collections not worth taking a look at:
 Specialized validators that stand on their own:
 -----------------------------------------------
 
+* https://github.com/daddyz/phonelib (`phone: true`)
+* https://github.com/perfectline/validates_url
 * https://github.com/balexand/email_validator 
 
 
