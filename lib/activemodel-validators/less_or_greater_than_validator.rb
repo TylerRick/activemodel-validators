@@ -73,7 +73,7 @@ module ActiveModel
         return if value.blank? or other_value.blank?
         unless value.send(operator, other_value)
           record.errors.add(attribute, message_key,
-                            options.merge(
+                            **options.merge(
                               value:         value,
                               operator:      operator,
                               operator_text: operator_text,
